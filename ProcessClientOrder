@@ -1,0 +1,25 @@
+public class ProcessClientOrder {
+
+	private static double amountDue = 0;
+	
+	
+	
+	public static void setAmountDue(double amt){
+		amountDue = amt;
+	}
+	public double getAmount(){
+		return this.amountDue;
+	}
+	
+	//adds the item to the amount due from the Supplier List
+	public void AddItem(){
+		Supplier sup = new Supplier();
+		double price;
+		price = sup.getPrice()*sup.getQuantity();
+		this.amountDue += price;
+		this.setAmountDue(this.amountDue);
+	}
+	
+	
+	
+}
